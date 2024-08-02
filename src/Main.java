@@ -10,9 +10,9 @@ public class Main {
 
         {
             try {
-                System.out.println(deduct("MyAcc", 9000));
+                System.out.println(deduct("MyAcc", 2000000));
             } catch (InsufficientAmountException e) {
-                throw new RuntimeException(e);
+                System.out.println("ошибка");
             }
         }
 
