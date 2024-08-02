@@ -9,9 +9,10 @@ public class Main {
             System.out.println(deduct("MyAcc", 2000000));
         } catch (InsufficientAmountException e) {
             System.out.println("ошибка");
-        } }
-        throws InsufficientAmountException, NameDontMatchException
-        {
+        }
+
+        //throws InsufficientAmountException, NameDontMatchException
+
             System.out.println(deduct("MyAcc", 10000));
             System.out.println(deduct("MyAcc", 2000000));
             System.out.println(deduct("NotMyAcc", 500));
