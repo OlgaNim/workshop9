@@ -1,7 +1,7 @@
 public class Main {
     public static String nameAcc = "MyAcc";
     public static int amountInBankAccount = 1000000;
-    public static void main(String[] args) throws InsufficientAmountException {
+    public static void main(String[] args) throws InsufficientAmountException, NameDontMatchException {
         deduct("MyAcc", 10000);
         deduct("MyAcc", 2000000);
         deduct("NotMyAcc", 500);
