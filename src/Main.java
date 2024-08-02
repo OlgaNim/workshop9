@@ -10,22 +10,25 @@ public class Main {
 //        } catch (InsufficientAmountException e) {
 //            System.out.println("ошибка");
 //        }
-
+        //выводить ошибки где-то, а где-то бросать исключения. если просто выводить инфо
+        //про ошибку то значение amountInBankAccount станет отрицательным
         System.out.println(deduct("MyAcc", 10000));
         System.out.println(deduct("MyAcc", 2000000));
         System.out.println(deduct("NotMyAcc", 500));
 
     }
-        public static int deduct (String accountToProcess,int amtToCacheOut) throws InsufficientAmountException {
+        public static String deduct (String accountToProcess,int amtToCacheOut) throws InsufficientAmountException {
             if (!nameAcc.equals(accountToProcess)) {
-                System.out.println("Название аккаунта не соответствует");
+
+                throw new NameDontMatchException("Название аккаунта не соответствует");
             }
             if (amountInBankAccount < amtToCacheOut) {
                 System.out.println("Недостаточно денег на счету, введите меньше " + amtToCacheOut);
             }
 
             amountInBankAccount = amountInBankAccount - amtToCacheOut;
-            return amountInBankAccount;
+            String balance = "На счете осталось " + amountInBankAccount;
+            return balance;
         }
 
     }
